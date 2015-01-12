@@ -85,6 +85,11 @@ int main(int argc, char** argv) {
     assertKey(82, list, 6, 10000);
     assertPosition(83, list, 10000, 0, 3);
     assertPosition(84, list, 10000, 4, 6);
+    
+    // Operazioni 90
+    list = LLEmptyList(list);   // always free the memory when the list is not
+                                // needed anymore
+    assertSize(90, list, 0);
 
     return (EXIT_SUCCESS);
 }

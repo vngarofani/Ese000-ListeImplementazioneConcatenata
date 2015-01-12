@@ -87,6 +87,8 @@ LLElement * LLRemoveAtPosition(LLElement * first, int position) {
     return NULL;
 }
 
-
-
-
+/* Empties the list */
+LLElement * LLEmptyList(LLElement *first) {
+    // TODO To be implemented
+    return NULL;
+}
