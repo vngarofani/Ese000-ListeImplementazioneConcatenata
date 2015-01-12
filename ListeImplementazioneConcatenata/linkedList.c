@@ -158,6 +158,13 @@ LLElement * LLRemoveAtPosition(LLElement * first, int position) {
     return first;
 }
 
-
-
-
+/* Empties the list */
+LLElement * LLEmptyList(LLElement *first) {
+    LLElement *temp;
+    while(first != NULL) {
+        temp = first;
+        first = first->next;
+        free(temp);
+    }
+    return NULL;
+}

@@ -102,6 +102,11 @@ int main(int argc, char** argv) {
     for(i=0; i<10; i++)
         assertKey(101, list, i, 10+i);
     
+    // Operazioni 110
+    list = LLEmptyList(list);   // always free the memory when the list is not
+                                // needed anymore
+    assertSize(110, list, 0);
+    
     puts("Ottimo lavoro! Sembra proprio che tutto funzioni correttamente.\n");
     return (EXIT_SUCCESS);
 }
