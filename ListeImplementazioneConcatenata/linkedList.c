@@ -6,7 +6,14 @@
  * Returns the updated pointer to the first element of the list.
  */
 LLElement * LLInsertAtBeginning(LLElement * first, int key) {
-    // TODO To be implemented
+    LLElement*new;
+    new=(LLElement *)malloc(sizeof(LLElement));
+    if(new != NULL) {
+        new->next=first;
+        new->key=key;
+        first=new;
+    }
+     // TODO To be implemented
     return NULL;
 }
 
@@ -15,6 +22,16 @@ LLElement * LLInsertAtBeginning(LLElement * first, int key) {
  * Returns the updated pointer to the first element of the list.
  */
 LLElement * LLInsertAtEnd(LLElement * first, int key) {
+    LLElement * new;
+    LLElement ** temp;
+    new = (LLElement *)malloc(sizeof(LLElement));
+    if(new != NULL) {
+        temp = &first;
+        while(*temp != NULL)
+            temp = &((*temp)->next);
+        new->next = NULL;
+        new->key = key;
+        *temp = new;
     // TODO To be implemented
     return NULL;
 }
@@ -27,6 +44,18 @@ LLElement * LLInsertAtEnd(LLElement * first, int key) {
  * Returns the updated pointer to the first element of the list.
  */
 LLElement * LLInsertAtPosition(LLElement * first, int key, int position) {
+    LLElement * new;
+    LLElement ** temp;
+    int i;
+    new = (LLElement *)malloc(sizeof(LLElement));
+    if(new != NULL) {
+        temp = &first;
+        for(i=0; i<position; i++)
+            temp = &((*temp)->next);
+        new->next = *temp;
+        new->key = key;
+        *temp = new;
+}
     // TODO To be implemented
     return NULL;
 }
